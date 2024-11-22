@@ -1,5 +1,4 @@
-accept-language [![Build Status](https://travis-ci.org/tinganho/node-accept-language.png)](https://travis-ci.org/tinganho/node-accept-language)
-========================
+# accept-language [![Build Status](https://travis-ci.org/tinganho/node-accept-language.png)](https://travis-ci.org/tinganho/node-accept-language)
 
 [![NPM](https://nodei.co/npm/accept-language.png?downloads=true&stars=true)](https://nodei.co/npm/accept-language/)
 
@@ -15,9 +14,12 @@ npm install accept-language --save
 
 ```ts
 // var acceptLanguage = require('accept-language');
-import acceptLanguage from 'accept-language';
-acceptLanguage.languages(['en-US', 'zh-CN']);
-console.log(acceptLanguage.get('en-GB,en;q=0.8,sv'));
+import acceptLanguage from "accept-language";
+acceptLanguage.languages(["en-US", "zh-CN"]);
+// default language will be first from lang tags, given to languages(...) method.
+// But if you dont want that behavior - uncomment following line
+//acceptLanguage.setDefaultLanguageTag(null);
+console.log(acceptLanguage.get("en-GB,en;q=0.8,sv"));
 /*
 
 'en-US'
@@ -26,20 +28,25 @@ console.log(acceptLanguage.get('en-GB,en;q=0.8,sv'));
 ```
 
 ### Usage with Express:
+
 If you are using Express server please use the middleware [express-request-language](https://www.npmjs.com/package/express-request-language).
 
 ### API
+
 #### acceptLanguage.languages(Array languageTags);
+
 Provide your language tags in order of priority. The language tags must comply with [BCP47][] standard.
 
 ```javascript
-acceptLanguage.languages(['en-US', 'zh-CN']);
+acceptLanguage.languages(["en-US", "zh-CN"]);
 ```
 
 #### acceptLanguage.get(String acceptLanguageString);
+
 Returns the most likely language given an `Accept-Language` string. At least 1 language tag must be provided.
+
 ```javascript
-acceptLanguage.get('en-GB,en;q=0.8,sv');
+acceptLanguage.get("en-GB,en;q=0.8,sv");
 ```
 
 ### Maintainer
@@ -47,6 +54,7 @@ acceptLanguage.get('en-GB,en;q=0.8,sv');
 Tingan Ho [@tingan87][]
 
 ### License
+
 MIT
 
 [L10ns]: http://l10ns.org

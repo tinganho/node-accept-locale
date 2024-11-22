@@ -1,6 +1,6 @@
 {
   "name": "accept-language",
-  "version": "3.0.20",
+  "version": "3.0.21",
   "description": "Accept-Language parser for nodejs",
   "main": "Build/Source/AcceptLanguage.js",
   "scripts": {
@@ -29,7 +29,8 @@
     "@types/node": "^8.0.31",
     "chai": "~1.9.1",
     "mocha": "^10.7.3",
-    "source-map-support": "^0.4.18"
+    "source-map-support": "^0.4.18",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "bcp47": "^1.1.2"
